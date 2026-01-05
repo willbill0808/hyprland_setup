@@ -9,4 +9,4 @@ cd hyprland_setup/will-made/set_up
 
 cp hyprland.conf $HOME/.config/hypr
 
-sudo ./installs.fish
+./installs.fish
