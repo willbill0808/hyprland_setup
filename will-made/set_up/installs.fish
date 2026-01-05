@@ -31,9 +31,9 @@ yay -S github-desktop --noconfirm
 set_color green; echo "done with yay"; set_color normal
 
 set_color yellow; echo "waiting for snap sockets"; set_color normal
-until snap version >/dev/null 2>&1; do
+while not snap version >/dev/null 2>&1
     sleep 1
-done
+end
 set_color green; echo "snap ready"; set_color normal
 
 # Snap packages
