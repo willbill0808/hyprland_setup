@@ -6,4 +6,4 @@ cd Documents
 git clone https://github.com/willbill0808/hyprland_setup.git
 
 cd hyprland_setup/will-made/set_up
-sudo ./installs 
+sudo ./installs.sh
