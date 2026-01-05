@@ -14,7 +14,7 @@ sudo pacman -Syu unzip nautilus vscode rofi gnome-keyring base-devel git steam -
 set_color green; echo "done with pacman"; set_color normal
 
 # Snap
-if not test -d snapd
+if not test -d ~/snapd
     git clone https://aur.archlinux.org/snapd.git
 end
 cd snapd
@@ -25,7 +25,7 @@ cd ..
 set_color green; echo "done with snap download"; set_color normal
 
 # Yay
-if not test -d yay
+if not test -d ~/yay
     git clone https://aur.archlinux.org/yay.git
 end
 cd yay
