@@ -2,8 +2,15 @@
 
 cd ~
 
+if not grep -q '^\[multilib\]' /etc/pacman.conf
+    echo "==> Enabling multilib repository..."
+    sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
+else
+    echo "==> Multilib already enabled."
+end
+
 # Base packages
-sudo pacman -Syu unzip nautilus vscode rofi gnome-keyring base-devel git --noconfirm; or exit 1
+sudo pacman -Syu unzip nautilus vscode rofi gnome-keyring base-devel git steam --noconfirm; or exit 1
 set_color green; echo "done with pacman"; set_color normal
 
 # Snap
@@ -37,5 +44,5 @@ end
 set_color green; echo "snap ready"; set_color normal
 
 # Snap packages
-sudo snap install opera steam spotify
+sudo snap install opera spotify
 set_color green; echo "done with snap"; set_color normal
