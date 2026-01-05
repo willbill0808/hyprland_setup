@@ -1,8 +1,5 @@
 #!/usr/bin/env fish
 
-
-
-
 # Define the folder and filename
 set kittyfolder "$HOME/.config/kitty"
 set filename "colors.conf"

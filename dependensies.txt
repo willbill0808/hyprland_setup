@@ -1,0 +1,13 @@
+nautilus
+vscode
+rofi
+gnome-keyring
+git
+
+yay
+github-desktop
+
+snap
+opera 
+steam 
+spotify
