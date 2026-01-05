@@ -10,20 +10,24 @@ while true
 end &
 set sudo_keepalive $last_pid
 
+function cleanup --on-event fish_exit
+    kill $sudo_keepalive 2>/dev/null
+end
+
 ### ---- multilib ----
 if not grep -q '^\[multilib\]' /etc/pacman.conf
-    echo "==> Enabling multilib repository..."
+    echo "Enabling multilib repository..."
     sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
     sudo pacman -Sy
 else
-    echo "==> Multilib already enabled."
+    echo "Multilib already enabled."
 end
 
 ### ---- base packages ----
 sudo pacman -Syu \
-    unzip nautilus vscode rofi gnome-keyring base-devel git steam \
+    unzip nautilus code rofi gnome-keyring base-devel git steam \
     --noconfirm --needed; or exit 1
-set_color green; echo "done with pacman"; set_color normal
+echo "Pacman packages installed"
 
 ### ---- snapd (AUR) ----
 if not command -v snap >/dev/null
@@ -35,15 +39,13 @@ if not command -v snap >/dev/null
     cd ~
 end
 
-if not systemctl is-enabled snapd.socket >/dev/null 2>&1
-    sudo systemctl enable --now snapd.socket
-end
+sudo systemctl enable --now snapd.socket snapd.service
 
 if not test -e /snap
     sudo ln -sf /var/lib/snapd/snap /snap
 end
 
-set_color green; echo "done with snapd"; set_color normal
+echo "snapd installed and started"
 
 ### ---- yay (AUR helper) ----
 if not command -v yay >/dev/null
@@ -55,22 +57,26 @@ if not command -v yay >/dev/null
     cd ~
 end
 
-set_color green; echo "done with yay install"; set_color normal
+echo "yay installed"
 
 ### ---- yay packages ----
 yay -S github-desktop --noconfirm --needed
-set_color green; echo "done with yay packages"; set_color normal
+echo "yay packages installed"
 
-### ---- wait for snap ----
-set_color yellow; echo "waiting for snap"; set_color normal
+### ---- wait for snap (with timeout) ----
+echo "Waiting for snapd to become ready (30s timeout)"
+set waited 0
 while not snap version >/dev/null 2>&1
     sleep 1
+    set waited (math $waited + 1)
+    if test $waited -ge 30
+        echo "snapd failed to start"
+        exit 1
+    end
 end
-set_color green; echo "snap ready"; set_color normal
+
+echo "snapd ready"
 
 ### ---- snap packages ----
 sudo snap install opera spotify --yes
-set_color green; echo "done with snap packages"; set_color normal
-
-### ---- cleanup ----
-kill $sudo_keepalive
+echo "snap packages installed"
