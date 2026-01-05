@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 #base stuff
 sudo pacman -Syu unzip nautilus vscode rofi gnome-keyring base-devel git --noconfirm
 
