@@ -2,6 +2,16 @@
 
 cd ~
 
+# Ask for sudo password once
+sudo -v; or exit 1
+
+# Keep sudo alive until script exits
+while true
+    sudo -n true
+    sleep 60
+end &
+set sudo_keepalive $last_pid
+
 if not grep -q '^\[multilib\]' /etc/pacman.conf
     echo "==> Enabling multilib repository..."
     sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
