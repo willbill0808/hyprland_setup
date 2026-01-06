@@ -1,12 +1,13 @@
-sudo pacman -Syu fish base-devel git gnome-keyring
+sudo pacman -Syu fish base-devel git gnome-keyring hyprlock hypridle waybar
 
 mkdir Documents 
 cd Documents
 
 git clone https://github.com/willbill0808/hyprland_setup.git
 
-cd hyprland_setup/will-made/set_up
+cd hyprland_setup/will-made/out_sourcing
 
 cp hyprland.conf $HOME/.config/hypr
+cp hyprlock.conf $HOME/.config/hypr
 
 ./installs.fish
