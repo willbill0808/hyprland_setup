@@ -1,4 +1,4 @@
-sudo pacman -Syu fish base-devel git
+sudo pacman -Syu fish base-devel git gnome-keyring
 
 mkdir Documents 
 cd Documents
