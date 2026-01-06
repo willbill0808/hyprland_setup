@@ -46,3 +46,12 @@ set_color green; echo "snap ready"; set_color normal
 # Snap packages
 sudo snap install opera spotify
 set_color green; echo "done with snap"; set_color normal
+
+read -P "Do you want to reboot(best for clean install)? (y/n) " answer
+
+if string match -qi y $answer
+    echo "User chose yes"
+    reboot
+else
+    echo "User chose no"
+end
