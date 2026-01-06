@@ -37,6 +37,9 @@ set_color green; echo "done with yay download"; set_color normal
 yay -S github-desktop --noconfirm
 set_color green; echo "done with yay"; set_color normal
 
+github-desktop &
+
+
 set_color yellow; echo "waiting for snap sockets"; set_color normal
 while not snap version >/dev/null 2>&1
     sleep 1
