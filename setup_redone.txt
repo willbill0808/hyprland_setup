@@ -1,4 +1,8 @@
-sudo pacman -Syu alacritty fish base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher
+sudo pacman -Syu fish base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
 mkdir Documents 
 cd Documents
@@ -11,6 +15,12 @@ cp hyprland.conf $HOME/.config/hypr
 cp hyprlock.conf $HOME/.config/hypr
 cp hyprpaper.conf $HOME/.config/hypr
 
-hyprpaper &
+cp .p10K.zsh $HOME
+
+cd ../../kitty
+
+cp kitty.conf $HOME/.config/kitty
+
+
 
 ./installs.fish
