@@ -10,7 +10,7 @@ else
 end
 
 # Base packages
-sudo pacman -Syu unzip nautilus vscode rofi gnome-keyring base-devel git steam fastfetch btop --noconfirm; or exit 1
+sudo pacman -Syu swww  zsh swaync unzip nautilus vscode rofi gnome-keyring base-devel git steam fastfetch btop --noconfirm; or exit 1
 set_color green; echo "done with pacman"; set_color normal
 
 # Snap
