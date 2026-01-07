@@ -34,7 +34,7 @@ cd ..
 set_color green; echo "done with yay download"; set_color normal
 
 # Yay packages
-yay -S librewolf-bin github-desktop --noconfirm
+yay -S nwg-look-bin librewolf-bin github-desktop --noconfirm
 set_color green; echo "done with yay"; set_color normal
 
 github-desktop &
