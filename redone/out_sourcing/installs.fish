@@ -13,17 +13,6 @@ end
 sudo pacman -Syu swww  zsh swaync unzip nautilus vscode rofi gnome-keyring base-devel git steam fastfetch btop --noconfirm; or exit 1
 set_color green; echo "done with pacman"; set_color normal
 
-# Snap
-if not test -d ~/snapd
-    git clone https://aur.archlinux.org/snapd.git
-end
-cd snapd
-makepkg -si; or exit 1
-sudo systemctl enable --now snapd.socket
-sudo ln -sf /var/lib/snapd/snap /snap
-cd ..
-set_color green; echo "done with snap download"; set_color normal
-
 # Yay
 if not test -d ~/yay
     git clone https://aur.archlinux.org/yay.git
