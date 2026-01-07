@@ -1,7 +1,5 @@
 sudo pacman -Syu zsh fish base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher
 
-chsh -s /bin/zsh
-
 
 mkdir Documents 
 cd Documents
