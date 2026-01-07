@@ -1,3 +1,4 @@
+#!/usr/bin/env fish
 
 set_color yellow
 read -P "Do you want to reboot(best for clean install)? (y/n) " answer
