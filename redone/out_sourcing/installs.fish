@@ -26,7 +26,7 @@ set_color green; echo "done with yay download"; set_color normal
 yay -S nwg-look-bin librewolf-bin github-desktop --noconfirm
 set_color green; echo "done with yay"; set_color normal
 
-github-desktop &
+github-desktop & disown
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
