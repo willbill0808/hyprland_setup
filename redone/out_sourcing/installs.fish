@@ -10,7 +10,7 @@ else
 end
 
 # Base packages
-sudo pacman -Syu unzip nautilus vscode rofi gnome-keyring base-devel git steam fastfetch btop --noconfirm; or exit 1
+sudo pacman -Syu swww  zsh swaync unzip nautilus vscode rofi gnome-keyring base-devel git steam fastfetch btop --noconfirm; or exit 1
 set_color green; echo "done with pacman"; set_color normal
 
 # Snap
@@ -34,7 +34,7 @@ cd ..
 set_color green; echo "done with yay download"; set_color normal
 
 # Yay packages
-yay -S librewolf-bin github-desktop --noconfirm
+yay -S nwg-look-bin librewolf-bin github-desktop --noconfirm
 set_color green; echo "done with yay"; set_color normal
 
 github-desktop &
