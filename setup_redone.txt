@@ -3,10 +3,6 @@ sudo pacman -Syu zsh fish base-devel git gnome-keyring hyprlock hypridle hyprpap
 chsh -s /bin/zsh
 
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-
 mkdir Documents 
 cd Documents
 
@@ -27,3 +23,7 @@ cp kitty.conf $HOME/.config/kitty
 
 
 ./installs.fish
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
