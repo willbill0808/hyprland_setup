@@ -28,8 +28,13 @@ set_color green; echo "done with yay"; set_color normal
 
 github-desktop &
 
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+set_color yellow
 read -P "Do you want to reboot(best for clean install)? (y/n) " answer
+set_color normal
 
 if string match -qi y $answer
     echo "User chose yes"
