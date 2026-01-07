@@ -14,23 +14,6 @@ cp hyprland.conf $HOME/.config/hypr
 cp hyprlock.conf $HOME/.config/hypr
 cp hyprpaper.conf $HOME/.config/hypr
 
-cp .p10K.zsh $HOME
-
-cd ../../kitty
-
-cp kitty.conf $HOME/.config/kitty
-
-
 
 ./installs.fish
-
-
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-cd $home
-
-chmod +x Documents/hyprland_setup/redone/out_sourcing/installs_p2.fish
- Documents/hyprland_setup/redone/out_sourcing/installs_p2.fish
 
