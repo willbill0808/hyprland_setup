@@ -2,13 +2,6 @@
 
 cd ~
 
-if not grep -q '^\[multilib\]' /etc/pacman.conf
-    echo "==> Enabling multilib repository..."
-    sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
-else
-    echo "==> Multilib already enabled."
-end
-
 # Base packages
 sudo pacman -Syu swww  zsh swaync unzip nautilus vscode rofi gnome-keyring base-devel git steam fastfetch btop --noconfirm; or exit 1
 set_color green; echo "done with pacman"; set_color normal
