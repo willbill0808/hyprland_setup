@@ -26,7 +26,7 @@ cp hyprland.conf $HOME/.config/hypr
 cp hyprlock.conf $HOME/.config/hypr
 cp hyprpaper.conf $HOME/.config/hypr
 
-cp ~     
+cd ~     
 
 swww-daemon & disown
 
