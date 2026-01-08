@@ -2,11 +2,18 @@ set -e
 
 cd ~
 
+echo 
+
+sudo -v
+
 sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
 sudo pacman -Syu zsh steam fish base-devel git gnome-keyring \
   hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync \
-  unzip nautilus vscode rofi fastfetch btop  
+  unzip nautilus vscode rofi fastfetch btop discord flatpak prismlauncher --noconfirm
+
+sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
+
 
 git clone https://aur.archlinux.org/yay.git
 
