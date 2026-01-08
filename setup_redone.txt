@@ -1,7 +1,6 @@
 sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
-sudo pacman -Syu zsh fish steam base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher
-
+sudo pacman -Syu zsh fish steam base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync unzip nautilus vscode rofi fastfetch btop  
 
 mkdir Documents 
 cd Documents
