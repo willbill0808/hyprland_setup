@@ -1,3 +1,5 @@
+set -e
+
 cd ~
 
 sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
