@@ -18,8 +18,8 @@ cp ~
 git clone https://aur.archlinux.org/yay.git
 
 cd yay
-makepkg -si; or exit 1
+makepkg -si
 cd ..
 
-./installs.fish
+yay -S nwg-look-bin librewolf-bin github-desktop 
 
