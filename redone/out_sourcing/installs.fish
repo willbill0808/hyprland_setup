@@ -2,10 +2,6 @@
 
 cd ~
 
-# Base packages
-sudo pacman -Syu swww  zsh swaync unzip nautilus vscode rofi gnome-keyring base-devel git steam fastfetch btop --noconfirm; or exit 1
-set_color green; echo "done with pacman"; set_color normal
-
 swww img Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
 
 # Yay
