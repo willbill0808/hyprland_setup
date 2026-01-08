@@ -37,6 +37,10 @@ cd hyprland_setup/redone/out_sourcing
 mkdir -p ~/.config/hypr
 cp hyprland.conf hyprlock.conf hyprpaper.conf ~/.config/hypr/
 
+mkdir -p ~/.config/kitty
+cp terminal/kitty.conf ~/.config/kitty/
+
+
 cd ~
 
 swww-daemon >/dev/null 2>&1 &
