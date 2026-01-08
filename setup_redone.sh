@@ -8,6 +8,11 @@ sudo pacman -Syu zsh steam fish base-devel git gnome-keyring \
   hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync \
   unzip nautilus vscode rofi fastfetch btop  
 
+if [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]]; then
+  eval "$(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)" >/dev/null 2>&1 &
+  export SSH_AUTH_SOCK
+fi
+
 git clone https://aur.archlinux.org/yay.git
 
 cd yay
