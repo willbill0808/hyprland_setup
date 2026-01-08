@@ -10,9 +10,19 @@ sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
 sudo pacman -Syu zsh steam fish base-devel git gnome-keyring \
   hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync \
-  unzip nautilus vscode rofi fastfetch btop discord flatpak prismlauncher nwg-look --noconfirm
+  unzip nautilus vscode rofi fastfetch btop discord flatpak prismlauncher nwg-look otf-geist-mono-nerd --noconfirm
 
 sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
+
+git clone https://github.com/adi1090x/rofi.git
+
+cd rofi/files
+mkdir -p ~/.config/rofi
+cp -r colors config.rasi launchers ~/.config/rofi
+cd ~/Documents/hyprland_setup/redone/out_sourcing
+cp launcher.sh ~/.config/rofi/launchers/type-2
+cp denji.rasi ~/.config/rofi/colors
+cp -r shared ~/.config/rofi/launchers/type_2
 
 
 git clone https://aur.archlinux.org/yay.git
