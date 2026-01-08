@@ -37,5 +37,9 @@ cp hyprland.conf hyprlock.conf hyprpaper.conf ~/.config/hypr/
 
 cd ~
 
+systemctl --user enable gnome-keyring-daemon.service
+systemctl --user enable gnome-keyring-daemon.socket
+systemctl --user enable gnome-keyring-daemon-ssh.socket
+
 swww-daemon >/dev/null 2>&1 &
 swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
