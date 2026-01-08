@@ -13,6 +13,10 @@ cp hyprland.conf $HOME/.config/hypr
 cp hyprlock.conf $HOME/.config/hypr
 cp hyprpaper.conf $HOME/.config/hypr
 
+cp ~     
+
+git clone https://aur.archlinux.org/yay.git
+
 
 ./installs.fish
 
