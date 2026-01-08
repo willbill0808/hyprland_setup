@@ -15,6 +15,10 @@ cp hyprpaper.conf $HOME/.config/hypr
 
 cp ~     
 
+swww-daemon & disown
+
+swww img Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
+
 git clone https://aur.archlinux.org/yay.git
 
 cd yay
