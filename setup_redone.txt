@@ -1,4 +1,6 @@
-sudo pacman -Syu zsh fish base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher
+sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
+
+sudo pacman -Syu zsh fish steam base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher
 
 
 mkdir Documents 
