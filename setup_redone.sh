@@ -4,32 +4,33 @@ cd ~
 
 sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
-sudo pacman -Syu zsh fish base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync unzip nautilus vscode rofi fastfetch btop  
-sudo pacman -S steam 
+sudo pacman -Syu zsh steam fish base-devel git gnome-keyring \
+  hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync \
+  unzip nautilus vscode rofi fastfetch btop  
 
 git clone https://aur.archlinux.org/yay.git
 
 cd yay
-makepkg -si
+makepkg -si --noconfirm
 cd ..
 
-yay -S nwg-look-bin librewolf-bin github-desktop 
+yay -S nwg-look-bin librewolf-bin github-desktop --noconfirm
 
-github-desktop & disown
+if [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]]; then
+  github-desktop >/dev/null 2>&1 &
+fi
 
-mkdir Documents 
-cd Documents
+mkdir -p ~/Documents
+cd ~/Documents
 
 git clone https://github.com/willbill0808/hyprland_setup.git
 
 cd hyprland_setup/redone/out_sourcing
 
-cp hyprland.conf $HOME/.config/hypr
-cp hyprlock.conf $HOME/.config/hypr
-cp hyprpaper.conf $HOME/.config/hypr
+mkdir -p ~/.config/hypr
+cp hyprland.conf hyprlock.conf hyprpaper.conf ~/.config/hypr/
 
-cd ~     
+cd ~
 
-swww-daemon & disown
-
-swww img Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
+swww-daemon >/dev/null 2>&1 &
+swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
