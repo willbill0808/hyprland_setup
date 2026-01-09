@@ -74,7 +74,7 @@ status "Done with dependencies"
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/yay_installs.sh
 status "Done with yay"
 
-
+sudo pacman -S steam fish spotify-launcher swww swaync fastfetch btop discord flatpak prismlauncher nwg-look otf-geist-mono-nerd unzip
 status "Done with more_apps"
 
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/hypr_set.sh
