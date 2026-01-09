@@ -21,7 +21,7 @@ status "Changed to home directory"
 sudo -v
 status "Sudo credentials cached"
 
-sudo pacman -Suy zsh base-devel git
+sudo pacman -Suy zsh base-devel git --noconfirm
 
 bash redone/scripts/dependesies.sh
 status "Done with dependencies"
