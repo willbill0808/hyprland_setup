@@ -41,11 +41,20 @@ sudo -v
 status "Sudo credentials cached"
 
 sudo pacman -Syu zsh base-devel git --noconfirm
+status "Base packages installed"
 
 mkdir -p ~/Documents
 cd ~/Documents
+status "Entered Documents directory"
 
-git clone https://github.com/willbill0808/hyprland_setup.git
+if [[ ! -d hyprland_setup ]]; then
+  git clone https://github.com/willbill0808/hyprland_setup.git
+  status "Hyprland setup repository cloned"
+else
+  status "Hyprland setup repository already exists"
+fi
+
+cd hyprland_setup
 
 bash redone/scripts/dependesies.sh
 status "Done with dependencies"
@@ -58,19 +67,11 @@ if [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]]; then
   status "GitHub Desktop launched"
 fi
 
-mkdir -p ~/Documents
-cd ~/Documents
-status "Entered Documents directory"
-
-git clone https://github.com/willbill0808/hyprland_setup.git
-status "Hyprland setup repository cloned"
-
 bash redone/scripts/hypr_set.sh
 status "Hyprland configuration applied"
 
 swww-daemon >/dev/null 2>&1 &
-swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
+swww img redone/wallpapers/wallpaper.jpg
 status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
-
