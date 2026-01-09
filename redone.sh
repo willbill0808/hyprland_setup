@@ -65,17 +65,17 @@ status "Hyprland setup repository cloned"
 
 cd hyprland_setup
 
-bash redone/out_sourcing/scripts/dependesies.sh
+bash /redone/out_sourcing/scripts/dependesies.sh
 status "Done with dependencies"
 
-bash redone/scripts/yay_installs.sh
+bash /redone/scripts/yay_installs.sh
 status "Done with yay installs"
 
-bash redone/scripts/hypr_set.sh
+bash /redone/scripts/hypr_set.sh
 status "Hyprland configuration applied"
 
 swww-daemon >/dev/null 2>&1 &
-swww img redone/wallpapers/wallpaper.jpg
+swww img /redone/wallpapers/wallpaper.jpg
 status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
