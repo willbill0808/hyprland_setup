@@ -6,6 +6,25 @@ set -e
 # Save original stdout (main terminal) for status messages
 exec 3>&1
 
+# Pick a terminal (no foot dependency)
+TERMINAL_CMD="${TERMINAL:-alacritty}"
+
+# Create FIFO for noisy output
+DOWNLOAD_FIFO="/tmp/install_downloads.$$"
+mkfifo "$DOWNLOAD_FIFO"
+
+# Cleanup on exit or error
+cleanup() {
+  rm -f "$DOWNLOAD_FIFO"
+}
+trap cleanup EXIT
+
+# Open second terminal for downloads/logs
+hyprctl dispatch exec "[float;size 900 600] $TERMINAL_CMD -e bash -c 'echo Downloads / Logs; echo; cat \"$DOWNLOAD_FIFO\"'"
+
+# Redirect all stdout + stderr to the downloads terminal
+exec >"$DOWNLOAD_FIFO" 2>&1
+
 # Status helper (prints to main terminal)
 status() {
   echo "[*] $*" >&3
@@ -21,8 +40,7 @@ status "Changed to home directory"
 sudo -v
 status "Sudo credentials cached"
 
-sudo pacman -Suy zsh base-devel git --noconfirm
-
+sudo pacman -Syu zsh base-devel git
 bash redone/scripts/dependesies.sh
 status "Done with dependencies"
 
@@ -49,3 +67,4 @@ swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
 status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
+
