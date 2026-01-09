@@ -42,7 +42,10 @@ status "Sudo credentials cached"
 
 sudo pacman -Syu zsh base-devel git --noconfirm
 
+mkdir -p ~/Documents
+cd ~/Documents
 
+git clone https://github.com/willbill0808/hyprland_setup.git
 
 bash redone/scripts/dependesies.sh
 status "Done with dependencies"
