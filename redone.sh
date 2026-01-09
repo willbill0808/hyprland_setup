@@ -52,6 +52,8 @@ status "Changed to home directory"
 sudo true
 status "Sudo credentials cached"
 
+sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
+
 sudo pacman -Syu zsh base-devel git vscode gnome-keyring \
   hyprlock hypridle hyprpaper waybar  \
   nautilus vscode rofi xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland \
