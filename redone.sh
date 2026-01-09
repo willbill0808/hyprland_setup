@@ -63,13 +63,13 @@ git clone https://github.com/willbill0808/hyprland_setup.git
 
 status "Hyprland setup repository cloned"
 
-sudo bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/dependesies.sh
+
 status "Done with dependencies"
 
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/yay_installs.sh
 status "Done with yay"
 
-sudo bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/more_apps.sh
+
 status "Done with more_apps"
 
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/hypr_set.sh
