@@ -52,21 +52,15 @@ status "Changed to home directory"
 sudo true
 status "Sudo credentials cached"
 
-sudo pacman -Syu zsh base-devel git vscode --noconfirm
-status "Base packages installed"
-
-sudo pacman -S gnome-keyring \
+sudo pacman -Syu zsh base-devel git vscode gnome-keyring \
   hyprlock hypridle hyprpaper waybar  \
-  nautilus vscode rofi --noconfirm
-
-sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
+  nautilus vscode rofi xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland \
+  steam fish spotify-launcher swww swaync fastfetch btop discord flatpak prismlauncher nwg-look otf-geist-mono-nerd unzip --noconfirm
+status "Base packages installed"
 
 status "Done with dependencies"
 
-sudo pacman -S steam fish spotify-launcher swww swaync fastfetch btop discord flatpak prismlauncher nwg-look otf-geist-mono-nerd unzip --noconfirm
-
 status "Done with more_apps"
-
 
 mkdir -p ~/Documents
 cd ~/Documents
@@ -79,17 +73,11 @@ status "Hyprland setup repository cloned"
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/yay_installs.sh
 status "Done with yay"
 
-
-
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/hypr_set.sh
 status "Done with hyprland config"
-
 
 swww-daemon >/dev/null 2>&1 &
 swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
 status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
-
-
-
