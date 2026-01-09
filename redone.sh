@@ -52,7 +52,7 @@ status "Changed to home directory"
 sudo true
 status "Sudo credentials cached"
 
-sudo pacman -Syu zsh base-devel git --noconfirm
+sudo pacman -Syu zsh base-devel git vscode --noconfirm
 status "Base packages installed"
 
 mkdir -p ~/Documents
