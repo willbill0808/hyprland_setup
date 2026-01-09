@@ -41,6 +41,7 @@ cp hyprland.conf hyprlock.conf hyprpaper.conf ~/.config/hypr/
 mkdir -p ~/.config/kitty
 cp terminal/kitty.conf ~/.config/kitty/
 
+cd ~
 git clone https://github.com/adi1090x/rofi.git
 
 cd rofi/files
