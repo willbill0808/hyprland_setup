@@ -1,5 +1,7 @@
 #!/bin/bash
 
+status "Started downloading with dependencies"
+
 cd ~
 
 sudo pacman -S gnome-keyring \
