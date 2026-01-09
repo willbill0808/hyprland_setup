@@ -50,7 +50,7 @@ cp -r colors config.rasi launchers ~/.config/rofi
 cd ~/Documents/hyprland_setup/redone/out_sourcing
 cp launcher.sh ~/.config/rofi/launchers/type-2
 cp denji.rasi ~/.config/rofi/colors
-cp -r shared ~/.config/rofi/launchers/type_2
+cp -r shared ~/.config/rofi/launchers/type-2
 
 cd ~
 
