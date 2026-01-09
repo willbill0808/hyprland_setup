@@ -14,7 +14,7 @@ exec 3>&1
 echo 2
 
 # Pick a terminal (no foot dependency)
-TERMINAL_CMD="${TERMINAL:-alacritty}"
+TERMINAL_CMD="${TERMINAL:-kitty}"
 
 echo 3
 
