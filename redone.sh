@@ -55,6 +55,13 @@ status "Sudo credentials cached"
 sudo pacman -Syu zsh base-devel git vscode --noconfirm
 status "Base packages installed"
 
+bash /home/willbill0808/Documents/hyprland_setup/redone/out_sourcing/scripts/dependensies.sh
+status "Done with dependencies"
+
+bash /home/willbill0808/Documents/hyprland_setup/redone/out_sourcing/scripts/more_apps.sh
+status "Done with more_apps"
+
+
 mkdir -p ~/Documents
 cd ~/Documents
 status "Entered Documents directory"
@@ -63,19 +70,10 @@ git clone https://github.com/willbill0808/hyprland_setup.git
 
 status "Hyprland setup repository cloned"
 
-sudo pacman -S gnome-keyring \
-  hyprlock hypridle hyprpaper waybar  \
-  nautilus vscode rofi --noconfirm
-
-sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
-
-status "Done with dependencies"
-
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/yay_installs.sh
 status "Done with yay"
 
-sudo pacman -S steam fish spotify-launcher swww swaync fastfetch btop discord flatpak prismlauncher nwg-look otf-geist-mono-nerd unzip
-status "Done with more_apps"
+
 
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/hypr_set.sh
 status "Done with hyprland config"
