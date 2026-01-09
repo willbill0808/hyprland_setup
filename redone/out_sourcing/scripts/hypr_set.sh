@@ -20,3 +20,5 @@ cp denji.rasi ~/.config/rofi/colors
 cp -r shared ~/.config/rofi/launchers/type-2
 
 cd ~
+
+status "Hyprland configuration applied"
