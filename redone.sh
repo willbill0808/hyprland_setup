@@ -46,6 +46,8 @@ status() {
 
 status "Starting install"
 
+sudo -s
+
 cd ~
 status "Changed to home directory"
 
