@@ -21,4 +21,4 @@ cp -r shared ~/.config/rofi/launchers/type-2
 
 cd ~
 
-status "Hyprland configuration applied"
+

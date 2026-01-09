@@ -8,4 +8,3 @@ sudo pacman -S gnome-keyring \
 
 sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
 
-status "Done with dependencies"

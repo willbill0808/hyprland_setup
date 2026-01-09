@@ -63,13 +63,18 @@ git clone https://github.com/willbill0808/hyprland_setup.git
 
 status "Hyprland setup repository cloned"
 
-bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/dependesies.sh
+sudo bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/dependesies.sh
+status "Done with dependencies"
 
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/yay_installs.sh
+status "Done with yay"
 
-bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/more_apps.sh
+sudo bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/more_apps.sh
+status "Done with more_apps"
 
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/hypr_set.sh
+status "Done with hyprland config"
+
 
 swww-daemon >/dev/null 2>&1 &
 swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
@@ -77,7 +82,5 @@ status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
 
-github-desktop &
-status "GitHub Desktop launched"
 
 
