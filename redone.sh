@@ -6,22 +6,6 @@ set -e
 # Save original stdout (main terminal) for status messages
 exec 3>&1
 
-# Create FIFO for noisy output
-DOWNLOAD_FIFO="/tmp/install_downloads.$$"
-mkfifo "$DOWNLOAD_FIFO"
-
-# Cleanup on exit or error
-cleanup() {
-  rm -f "$DOWNLOAD_FIFO"
-}
-trap cleanup EXIT
-
-# Open second terminal for downloads/logs
-hyprctl dispatch exec "[float;size 900 600] foot bash -c 'echo Downloads / Logs; echo; cat \"$DOWNLOAD_FIFO\"'"
-
-# Redirect all stdout + stderr to the downloads terminal
-exec >"$DOWNLOAD_FIFO" 2>&1
-
 # Status helper (prints to main terminal)
 status() {
   echo "[*] $*" >&3
