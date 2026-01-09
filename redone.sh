@@ -1,17 +1,25 @@
 #!/usr/bin/env bash
 set -e
 
+echo 1
+
 ### --- setup status/output split ---
 
 # Save original stdout (main terminal) for status messages
 exec 3>&1
 
+echo 2
+
 # Pick a terminal (no foot dependency)
 TERMINAL_CMD="${TERMINAL:-alacritty}"
+
+echo 3
 
 # Create FIFO for noisy output
 DOWNLOAD_FIFO="/tmp/install_downloads.$$"
 mkfifo "$DOWNLOAD_FIFO"
+
+echo 4
 
 # Cleanup on exit or error
 cleanup() {
@@ -19,20 +27,30 @@ cleanup() {
 }
 trap cleanup EXIT
 
+echo 5
+
 # Open second terminal for downloads/logs
 hyprctl dispatch exec "[float;size 900 600] $TERMINAL_CMD -e bash -c 'echo Downloads / Logs; echo; cat \"$DOWNLOAD_FIFO\"'"
 
+echo 6
+
 # Redirect all stdout + stderr to the downloads terminal
 exec >"$DOWNLOAD_FIFO" 2>&1
+
+echo 7
 
 # Status helper (prints to main terminal)
 status() {
   echo "[*] $*" >&3
 }
 
+echo 8
+
 ### --- script starts here ---
 
 status "Starting install"
+
+echo 9
 
 cd ~
 status "Changed to home directory"
