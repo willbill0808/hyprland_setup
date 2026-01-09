@@ -80,7 +80,7 @@ status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
 
-if [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]]; then
-  github-desktop >/dev/null 2>&1 &
-  status "GitHub Desktop launched"
-fi
+
+github-desktop 
+status "GitHub Desktop launched"
+
