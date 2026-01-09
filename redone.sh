@@ -55,7 +55,11 @@ status "Sudo credentials cached"
 sudo pacman -Syu zsh base-devel git vscode --noconfirm
 status "Base packages installed"
 
+sudo pacman -S gnome-keyring \
+  hyprlock hypridle hyprpaper waybar  \
+  nautilus vscode rofi --noconfirm
 
+sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
 
 status "Done with dependencies"
 
