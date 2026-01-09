@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+#set -e
 
 ### --- ensure sudo can always prompt ---
 exec < /dev/tty
