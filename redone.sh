@@ -77,10 +77,7 @@ status "Done with dependencies"
 bash redone/scripts/yay_installs.sh
 status "Done with yay installs"
 
-if [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]]; then
-  github-desktop >/dev/null 2>&1 &
-  status "GitHub Desktop launched"
-fi
+
 
 bash redone/scripts/hypr_set.sh
 status "Hyprland configuration applied"
@@ -91,3 +88,7 @@ status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
 
+if [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]]; then
+  github-desktop >/dev/null 2>&1 &
+  status "GitHub Desktop launched"
+fi
