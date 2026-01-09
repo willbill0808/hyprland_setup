@@ -59,6 +59,8 @@ mkdir -p ~/Documents
 cd ~/Documents
 status "Entered Documents directory"
 
+https://github.com/willbill0808/hyprland_setup.git
+
 status "Hyprland setup repository cloned"
 
 cd hyprland_setup
@@ -68,8 +70,6 @@ status "Done with dependencies"
 
 bash redone/scripts/yay_installs.sh
 status "Done with yay installs"
-
-
 
 bash redone/scripts/hypr_set.sh
 status "Hyprland configuration applied"
