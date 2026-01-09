@@ -46,8 +46,6 @@ status() {
 
 status "Starting install"
 
-sudo -s
-
 cd ~
 status "Changed to home directory"
 
@@ -57,10 +55,11 @@ status "Sudo credentials cached"
 sudo pacman -Syu zsh base-devel git vscode --noconfirm
 status "Base packages installed"
 
-bash /home/willbill0808/Documents/hyprland_setup/redone/out_sourcing/scripts/dependensies.sh
+
+
 status "Done with dependencies"
 
-bash /home/willbill0808/Documents/hyprland_setup/redone/out_sourcing/scripts/more_apps.sh
+
 status "Done with more_apps"
 
 
