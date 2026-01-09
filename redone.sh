@@ -83,3 +83,5 @@ swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
 status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
+
+github-desktop
