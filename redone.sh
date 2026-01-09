@@ -59,15 +59,7 @@ mkdir -p ~/Documents
 cd ~/Documents
 status "Entered Documents directory"
 
-if [[ ! -d hyprland_setup ]]; then
-  if git clone https://github.com/willbill0808/hyprland_setup.git; then
-    status "Hyprland setup repository cloned"
-  else
-    status "Clone failed, continuing"
-  fi
-else
-  status "Hyprland setup repository already exists"
-fi
+status "Hyprland setup repository cloned"
 
 cd hyprland_setup
 
