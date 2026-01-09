@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+status "Started configuring hyprland"
+
 cd ~/Documents/hyprland_setup/redone/out_sourcing
 
 mkdir -p ~/.config/hypr
