@@ -63,6 +63,7 @@ sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyp
 
 status "Done with dependencies"
 
+sudo pacman -S steam fish spotify-launcher swww swaync fastfetch btop discord flatpak prismlauncher nwg-look otf-geist-mono-nerd unzip
 
 status "Done with more_apps"
 
