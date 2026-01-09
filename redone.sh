@@ -63,6 +63,11 @@ git clone https://github.com/willbill0808/hyprland_setup.git
 
 status "Hyprland setup repository cloned"
 
+sudo pacman -S gnome-keyring \
+  hyprlock hypridle hyprpaper waybar  \
+  nautilus vscode rofi --noconfirm
+
+sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
 
 status "Done with dependencies"
 
