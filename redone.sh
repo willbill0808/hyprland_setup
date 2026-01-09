@@ -71,8 +71,15 @@ status "Done with dependencies"
 bash /redone/scripts/yay_installs.sh
 status "Done with yay installs"
 
+github-desktop 
+status "GitHub Desktop launched"
+
+bash /redone/scripts/more_apps.sh
+status "Downloaded more apps"
+
 bash /redone/scripts/hypr_set.sh
 status "Hyprland configuration applied"
+
 
 swww-daemon >/dev/null 2>&1 &
 swww img /redone/wallpapers/wallpaper.jpg
@@ -81,6 +88,5 @@ status "Wallpaper applied"
 status "INSTALL COMPLETE"
 
 
-github-desktop 
-status "GitHub Desktop launched"
+
 
