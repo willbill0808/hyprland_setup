@@ -53,8 +53,6 @@ echo 8
 
 status "Starting install"
 
-echo 9
-
 cd ~
 status "Changed to home directory"
 
@@ -77,7 +75,7 @@ fi
 
 cd hyprland_setup
 
-bash redone/scripts/dependesies.sh
+bash redone/out_sourcing/scripts/dependesies.sh
 status "Done with dependencies"
 
 bash redone/scripts/yay_installs.sh
