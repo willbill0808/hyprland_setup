@@ -59,7 +59,7 @@ mkdir -p ~/Documents
 cd ~/Documents
 status "Entered Documents directory"
 
-https://github.com/willbill0808/hyprland_setup.git
+git clone https://github.com/willbill0808/hyprland_setup.git
 
 status "Hyprland setup repository cloned"
 
