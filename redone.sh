@@ -2,6 +2,9 @@
 
 set -e
 
+### --- ensure sudo can always prompt ---
+exec < /dev/tty
+
 ### --- setup status/output split ---
 
 # Save original stdout (main terminal) for status messages
@@ -10,22 +13,29 @@ exec 3>&1
 # Pick a terminal (no foot dependency)
 TERMINAL_CMD="${TERMINAL:-kitty}"
 
-# Log file for noisy output
-LOG_FILE="/tmp/install.log"
-: > "$LOG_FILE"
+# FIFO for noisy output
+DOWNLOAD_FIFO="/tmp/install_downloads.$$"
+mkfifo "$DOWNLOAD_FIFO"
 
 # Cleanup on exit or error
 cleanup() {
-  rm -f "$LOG_FILE"
+  rm -f "$DOWNLOAD_FIFO"
 }
 trap cleanup EXIT
 
-# Open second terminal to follow logs (reader exists FIRST)
-$TERMINAL_CMD -e bash -c "echo 'Downloads / Logs'; echo; tail -f '$LOG_FILE'" &
-LOG_READER_PID=$!
+# Start a guaranteed FIFO reader FIRST (prevents blocking)
+cat "$DOWNLOAD_FIFO" >/dev/null &
+FIFO_FALLBACK_PID=$!
 
-# Redirect all stdout + stderr through tee
-exec > >(tee -a "$LOG_FILE") 2>&1
+# Try to open a terminal for logs (non-fatal)
+if command -v "$TERMINAL_CMD" >/dev/null 2>&1; then
+  hyprctl dispatch exec \
+    "[float;size 900 600] $TERMINAL_CMD -e bash -c 'echo Downloads / Logs; echo; cat \"$DOWNLOAD_FIFO\"'" \
+    || true
+fi
+
+# Redirect all stdout + stderr to FIFO (non-fatal)
+exec >"$DOWNLOAD_FIFO" 2>&1 || exec >/dev/null 2>&1
 
 # Status helper (prints only to main terminal)
 status() {
@@ -39,7 +49,7 @@ status "Starting install"
 cd ~
 status "Changed to home directory"
 
-sudo -v
+sudo true
 status "Sudo credentials cached"
 
 sudo pacman -Syu zsh base-devel git --noconfirm
@@ -80,3 +90,4 @@ swww img redone/wallpapers/wallpaper.jpg
 status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
+
