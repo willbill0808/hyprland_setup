@@ -69,9 +69,6 @@ status "Done with dependencies"
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/yay_installs.sh
 status "Done with yay installs"
 
-github-desktop 
-status "GitHub Desktop launched"
-
 bash ~/Documents/hyprland_setup/redone/out_sourcing/scripts/more_apps.sh
 status "Downloaded more apps"
 
@@ -85,6 +82,7 @@ status "Wallpaper applied"
 
 status "INSTALL COMPLETE"
 
-
+github-desktop 
+status "GitHub Desktop launched"
 
 
