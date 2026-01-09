@@ -1,53 +1,36 @@
 #!/usr/bin/env bash
 
-echo 0
-
 set -e
-
-echo 1
 
 ### --- setup status/output split ---
 
 # Save original stdout (main terminal) for status messages
 exec 3>&1
 
-echo 2
-
 # Pick a terminal (no foot dependency)
 TERMINAL_CMD="${TERMINAL:-kitty}"
 
-echo 3
-
-# Create FIFO for noisy output
-DOWNLOAD_FIFO="/tmp/install_downloads.$$"
-mkfifo "$DOWNLOAD_FIFO"
-
-echo 4
+# Log file for noisy output
+LOG_FILE="/tmp/install.log"
+: > "$LOG_FILE"
 
 # Cleanup on exit or error
 cleanup() {
-  rm -f "$DOWNLOAD_FIFO"
+  rm -f "$LOG_FILE"
 }
 trap cleanup EXIT
 
-echo 5
+# Open second terminal to follow logs (reader exists FIRST)
+$TERMINAL_CMD -e bash -c "echo 'Downloads / Logs'; echo; tail -f '$LOG_FILE'" &
+LOG_READER_PID=$!
 
-# Open second terminal for downloads/logs
-hyprctl dispatch exec "[float;size 900 600] $TERMINAL_CMD -e bash -c 'echo Downloads / Logs; echo; cat \"$DOWNLOAD_FIFO\"'"
+# Redirect all stdout + stderr through tee
+exec > >(tee -a "$LOG_FILE") 2>&1
 
-echo 6
-
-# Redirect all stdout + stderr to the downloads terminal
-exec >"$DOWNLOAD_FIFO" 2>&1
-
-echo 7
-
-# Status helper (prints to main terminal)
+# Status helper (prints only to main terminal)
 status() {
   echo "[*] $*" >&3
 }
-
-echo 8
 
 ### --- script starts here ---
 
@@ -67,8 +50,11 @@ cd ~/Documents
 status "Entered Documents directory"
 
 if [[ ! -d hyprland_setup ]]; then
-  git clone https://github.com/willbill0808/hyprland_setup.git
-  status "Hyprland setup repository cloned"
+  if git clone https://github.com/willbill0808/hyprland_setup.git; then
+    status "Hyprland setup repository cloned"
+  else
+    status "Clone failed, continuing"
+  fi
 else
   status "Hyprland setup repository already exists"
 fi
