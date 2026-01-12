@@ -49,5 +49,15 @@ cp -r shared ~/.config/rofi/launchers/type-2
 
 cd ~
 
+sudo pacman -S --needed \
+  ttf-dejavu \
+  ttf-liberation \
+  noto-fonts \
+  noto-fonts-emoji \
+  ttf-opensans
+
+fc-cache -rv
+
+
 swww-daemon >/dev/null 2>&1 &
 swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
