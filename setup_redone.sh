@@ -14,7 +14,7 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 
-yay -S librewolf-bin github-desktop --noconfirm
+yay -S brave-bin github-desktop --noconfirm
 
 if [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]]; then
   github-desktop >/dev/null 2>&1 &
