@@ -17,54 +17,53 @@ window#waybar {
 }
 
 tooltip { 
-    background: @bg0;
-    border: 1px solid @bg3;
+    background: @black;
+    border: 2px solid @orange;
     border-radius: 12px;
 
 }
 
 tooltip label{
-    color: @fg;
+    color: @bright-yellow;
     padding: 6px;
 }
 
 #workspaces {
-    background-color: @bg0;
+    background-color: @black;
     padding: 5px 3px;
     margin: 0 0 0 12px;
     border-radius: 18px;
-    border: 1px solid @bg1;
-    color: @fg;
+
 }
 
 #workspaces button{
     padding:0px 6px;
     margin: 0px 3px;
     border-radius: 50px;
-    color: white;
-    background-color: @bg1;
+    color: @bright-yellow;
+    background-color: @dark-red;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: @blue;
-    color: @bg0;
+    background-color: @orange;
+    color: @black;
     min-width: 50px;
     transition: all 0.3s ease-in-out;
     font-size: 13px;
 }
 
 #workspaces button:hover {
-    background-color: @purple;
-    color: @bg0;
+    background-color: @black;
+    color: @orange;
     border-radius: 16px;
     min-width: 50px;
-    background-size: 400% 400%;
+    background-size: 1px 1px;
 }
 
 #workspaces button.urgent {
-    background-color: @red;
-    color: @bg0;
+    background-color: @bright-red;
+    color: @black;
     border-radius: 16px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -73,18 +72,30 @@ tooltip label{
 
 
 
+
+#temperature,
+#cpu,
 #battery, 
 #pulseaudio,
 #network,
 #clock,
 #custom-notification {
-    background-color: @bg0;
+    background-color: @black;
     padding: 0 15px 0 15px;
-    margin: 0 15px 0 15px;
+    margin: 0 5px 0 5px;
     border-radius: 50px;
-    border: 1px solid @bg1;
+    color: @bright-yellow;
 }
 
+#clock {
+    margin: 0 5px 0 10px;
+}
+
+#custom-notification {
+    margin: 0 10px 0 5px;
+}
+
+/*
 #clock {
     color: @blue;
     margin: 0 15px 0 30px;
@@ -107,4 +118,4 @@ tooltip label{
     color: @blue;
 }
 
-
+*/
