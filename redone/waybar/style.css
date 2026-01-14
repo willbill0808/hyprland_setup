@@ -41,7 +41,7 @@ tooltip label{
     padding:0px 6px;
     margin: 0px 3px;
     border-radius: 50px;
-    color: transparent;
+    color: white;
     background-color: @bg1;
     transition: all 0.3s ease-in-out;
 }
