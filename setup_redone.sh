@@ -54,7 +54,7 @@ sudo pacman -S --needed \
   ttf-liberation \
   noto-fonts \
   noto-fonts-emoji \
-  ttf-opensans
+  ttf-opensans ttf-font-awesome
 
 fc-cache -rv
 
