@@ -6,10 +6,10 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        ""
+        "user"
     ],
     "modules-right": [
-        "pulseaudio",
+        "",
         "network",
         "battery",
         "cpu",
@@ -19,11 +19,11 @@
     "clock": {
         "interval": 1,
         "tooltip": true,
-        "format": "{:%H:%M:%S}",
-        "tooltip-format": "{:%Y-%m-%d}",
+        "format": "{:%H:%M:%S} ",
+        "tooltip-format": "{:%Y-%m-%d}"
     },
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{name}"
     },
     "tray": {
         "icon-size": 21,
@@ -39,7 +39,7 @@
         "format-muted": "",
         "format-icons": {
             "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": " ",
             "headphone": "",
             "hands-free": "",
             "headset": "",
@@ -119,5 +119,12 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "user": {
+        "format": "{user} (up {work_d} days,{work_H} H, {work_M} M and {work_S} S ↑)",
+        "interval": 1,
+        "height": 30,
+        "width": 30,
+        "icon": true,
     }
 }
