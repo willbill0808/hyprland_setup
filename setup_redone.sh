@@ -5,7 +5,7 @@ cd ~
 sudo -v
 
 sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
-sudo pacman -Syu zsh steam fish base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync unzip nautilus vscode rofi fastfetch btop discord flatpak prismlauncher nwg-look otf-geist-mono-nerd impala --noconfirm
+sudo pacman -Syu zsh steam fish base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync unzip nautilus vscode rofi fastfetch btop discord flatpak nwg-look otf-geist-mono-nerd impala --noconfirm
 sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
 
 git clone https://aur.archlinux.org/yay.git
@@ -63,3 +63,4 @@ bash ~/Documents/hyprland_setup/redone/scripts/launch_waybar.sh
 
 swww-daemon >/dev/null 2>&1 &
 swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
+
