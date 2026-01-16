@@ -5,7 +5,7 @@ cd ~
 sudo -v
 
 sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
-sudo pacman -Syu zsh steam fish base-devel git gnome-keyring hyprlock hypridle hyprpaper waybar spotify-launcher swww swaync unzip nautilus vscode rofi fastfetch btop discord flatpak nwg-look otf-geist-mono-nerd impala --noconfirm
+sudo pacman -Syu zsh steam fish base-devel git gnome-keyring hyprlock hypridle hyprpaper spotify-launcher swww swaync unzip nautilus vscode rofi fastfetch btop discord flatpak nwg-look otf-geist-mono-nerd impala --noconfirm
 sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
 
 git clone https://aur.archlinux.org/yay.git
@@ -14,7 +14,7 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 
-yay -S brave-bin github-desktop --noconfirm
+yay -S brave-bin waybar-cava github-desktop --noconfirm
 
 if [[ -n "$WAYLAND_DISPLAY" || -n "$DISPLAY" ]]; then
   github-desktop >/dev/null 2>&1 &
