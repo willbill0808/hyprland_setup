@@ -58,8 +58,6 @@ sudo pacman -S --needed \
 
 fc-cache -rv
 
-bash ~/Documents/hyprland_setup/redone/scripts/launch_waybar.sh
-
 
 swww-daemon >/dev/null 2>&1 &
 swww img ~/Documents/hyprland_setup/redone/wallpapers/wallpaper.jpg
