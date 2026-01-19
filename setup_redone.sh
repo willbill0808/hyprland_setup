@@ -49,7 +49,7 @@ cp -r shared ~/.config/rofi/launchers/type-2
 
 cd ~
 
-sudo pacman -S --needed \
+sudo pacman -Suy --noconfirm\
   ttf-dejavu \
   ttf-liberation \
   noto-fonts \

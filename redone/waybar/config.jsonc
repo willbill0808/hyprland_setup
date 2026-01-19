@@ -7,26 +7,26 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "network#speed",
+        //"network#speed",
         "cpu",
         "disk",
         "temperature",
-        "memory "
+        "memory"
     ],
     "modules-right": [
         "cava",
-        "bluetooth",
+        //"bluetooth",
         "network#wifi",
-        "network#ethernet",
-        "battery"
-        //"custom/notification"
+        //"network#ethernet",
+        "battery",
+        "custom/notification"
     ],
     "user": {
-        "format-user": "{user} (up {work_d} days,{work_H} H, {work_M} M and {work_S} S ↑)",
+        "format": " {user} (up {work_d} days, {work_H} H, {work_M} M and {work_S} S ↑)",
         "interval": 1,
         "height": 30,
         "width": 30,
-        "icon": true,
+        "icon": true
     },
     "network#wifi": {
         "interface": "wlan0",
@@ -59,7 +59,7 @@
         //"cava_config": "$XDG_CONFIG_HOME/cava/cava",
         "framerate": 30,
         "autosens": 1,
-        "sensitivity": 100,
+        "sensitivity": 2,
         "bars": 14,
         "lower_cutoff_freq": 50,
         "higher_cutoff_freq": 10000,
@@ -73,7 +73,7 @@
         "monstercat": false,
         "waves": false,
         "noise_reduction": 0.77,
-        "input_delay": 2,
+        "input_delay": 0,
         "format-icons": [
             "▁",
             "▂",
@@ -91,12 +91,12 @@
     "disk": {
         "interval": 30,
         "format": "{specific_used:0.2f} GiB /{specific_total:0.2f} GiB",
-        "tooltip-format":"Full: {free}/{total}",
+        "tooltip-format":"left: {free}/{total}",
         "unit": "GB"
         // 0.25 GB out of 2000.00 GB available. Alternatively 241.3MiB out of 1.9TiB available.
     },
     "memory": {
-        "interval": 30,
+        "interval": 1,
         "format": "{used:0.1f}G/{total:0.1f}G "
     },
     "clock": {
