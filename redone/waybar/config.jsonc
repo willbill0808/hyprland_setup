@@ -55,8 +55,8 @@
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
     },
-    "   ": {
-        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+    "cava": {
+        //"cava_config": "$XDG_CONFIG_HOME/cava/cava",
         "framerate": 30,
         "autosens": 1,
         "sensitivity": 100,
@@ -90,7 +90,7 @@
     },
     "disk": {
         "interval": 30,
-        "format": "{specific_free:0.2f} GiB /{specific_total:0.2f} GiB",
+        "format": "{specific_used:0.2f} GiB /{specific_total:0.2f} GiB",
         "tooltip-format":"Full: {free}/{total}",
         "unit": "GB"
         // 0.25 GB out of 2000.00 GB available. Alternatively 241.3MiB out of 1.9TiB available.
