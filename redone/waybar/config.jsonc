@@ -18,7 +18,7 @@
         //"bluetooth",
         //"network#wifi",
         //"network#ethernet",
-        "battery",
+        //"battery",
         "custom/notification"
     ],
     "user": {
