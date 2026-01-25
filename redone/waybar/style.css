@@ -17,19 +17,19 @@ window#waybar {
 }
 
 tooltip { 
-    background: @black;
-    border: 2px solid @orange;
+    background: @col1;
+    border: 2px solid @col6;
     border-radius: 12px;
 
 }
 
 tooltip label{
-    color: @bright-yellow;
+    color: @col4;
     padding: 6px;
 }
 
 #workspaces {
-    background-color: @black;
+    background-color: @border-black;
     padding: 5px 3px;
     margin: 0 0 0 12px;
     border-radius: 18px;
@@ -40,30 +40,30 @@ tooltip label{
     padding:0px 6px;
     margin: 0px 3px;
     border-radius: 50px;
-    color: @bright-yellow;
-    background-color: @dark-red;
+    color: @col4;
+    background-color: @col3;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: @orange;
-    color: @black;
+    background-color: @col6;
+    color: @col1;
     min-width: 50px;
     transition: all 0.3s ease-in-out;
     font-size: 13px;
 }
 
 #workspaces button:hover {
-    background-color: @black;
-    color: @orange;
+    background-color: @col1;
+    color: @col6;
     border-radius: 16px;
     min-width: 50px;
     background-size: 1px 1px;
 }
 
 #workspaces button.urgent {
-    background-color: @bright-red;
-    color: @black;
+    background-color: @col3;
+    color: @col1;
     border-radius: 16px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -82,11 +82,11 @@ tooltip label{
 #network,
 #clock,
 #custom-notification {
-    background-color: @black;
+    background-color: @col1;
     padding: 0 15px 0 15px;
     margin: 0 5px 0 5px;
     border-radius: 50px;
-    color: @bright-yellow;
+    color: @col4;
 }
 
 #clock {
