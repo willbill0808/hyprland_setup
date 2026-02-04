@@ -8,17 +8,19 @@
     ],
     "modules-center": [
         //"network#speed",
-        "cpu",
+        //"cpu",
+        "tray",
         "disk",
-        "temperature",
-        "memory"
+        "temperature"
+        //"memory"
     ],
     "modules-right": [
         "cava",
+        "pulseaudio",
         //"bluetooth",
-        //"network#wifi",
-        //"network#ethernet",
-        //"battery",
+        "network#wifi",
+        "network#ethernet",
+        "battery",
         "custom/notification"
     ],
     "user": {
@@ -30,9 +32,10 @@
     },
     "network#wifi": {
         "interface": "wlan0",
-        "format-wifi": " WiFi {signalStrength}% ⬇ {bandwidthDown} ⬆ {bandwidthUp}",
+        "format-wifi": "   {essid}: {signalStrength}% ⬇ {bandwidthUpBytes} ⬆ {bandwidthDownBytes}",
         "format-disconnected": "no WiFi connection",
-        "interval": 1
+        "interval": 1,
+        "on-click": "kitty -e impala & sleep 0.2 && hyprctl dispatch"
     },
     "network#ethernet": {
         "interface": "enp7s0f1",
@@ -90,10 +93,9 @@
     },
     "disk": {
         "interval": 30,
-        "format": "{specific_used:0.2f} GiB /{specific_total:0.2f} GiB",
-        "tooltip-format":"left: {free}/{total}",
+        "format": "{used}",
+        "tooltip-format": "Free: {free} /{total}",
         "unit": "GB"
-        // 0.25 GB out of 2000.00 GB available. Alternatively 241.3MiB out of 1.9TiB available.
     },
     "memory": {
         "interval": 1,
@@ -102,7 +104,7 @@
     "clock": {
         "interval": 1,
         "tooltip": true,
-        "format": "{:%H:%M:%S} ",
+        "format": "{:%I:%M:%S} ",
         "tooltip-format": "{:%Y-%m-%d}"
     },
     "hyprland/workspaces": {
@@ -128,7 +130,7 @@
             ]
         },
         "scroll-step": 1,
-        "on-click": "pavucontrol",
+        "on-click": "kitty -e wiremix & sleep 0.2 && hyprctl dispatch",
         "ignored-sinks": [
             "Easy Effects Sink"
         ]
@@ -136,7 +138,6 @@
     "cpu": {
         "interval": 10,
         "format": "{}% ",
-        "max-length": 10
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -161,7 +162,6 @@
             "",
             ""
         ],
-        "max-length": 25
     },
     "custom/notification": {
         "tooltip": true,
@@ -182,5 +182,13 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        /*"icons": {
+            "blueman": "bluetooth",
+            "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        }*/
     }
 }
