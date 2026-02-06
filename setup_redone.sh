@@ -25,10 +25,11 @@ cd ~/Documents
 
 git clone https://github.com/willbill0808/hyprland_setup.git
 
-cd hyprland_setup/redone
+cd hyprland_setup/redone/out_sourcing
 
 mkdir -p ~/.config/hypr
-cp hyprland.conf hyprlock.conf ~/.config/hypr/
+cp hyprland.conf hyprlock.conf hyprpaper.conf ~/.config/hypr/
+
 
 mkdir -p ~/.config/kitty
 cp terminal/kitty.conf ~/.config/kitty/
