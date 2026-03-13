@@ -125,39 +125,42 @@
       "driverSpecific": true,
       "format": "{name} C:{core-count}{?frequency} {frequency}{?}"
     },
-    {
-      "type": "memory",
-      "key": "│  ",
-      "keyColor": "yellow",
-      "percent": {
-        "type": 2,
-        "green": 30,
-        "yellow": 70,
-        "red": 90
-      }
-    },
-    {
-      "type": "disk",
-      "key": "│ 󰋊 ",
-      "keyColor": "yellow",
-      "percent": {
-        "type": 2,
-        "green": 30,
-        "yellow": 70,
-        "red": 90
-      }
-    },
-    {
-      "type": "swap",
-      "key": "│ 󰓡 ",
-      "keyColor": "yellow",
-      "percent": {
-        "type": 2,
-        "green": 30,
-        "yellow": 70,
-        "red": 90
-      }
-    },
+{
+  "type": "memory",
+  "key": "│   ",
+  "keyColor": "yellow",
+  "format": "{used}/{total} ({percent}%)",
+  "percent": {
+    "type": 2,
+    "green": 30,
+    "yellow": 70,
+    "red": 90
+  }
+},
+{
+  "type": "disk",
+  "key": "│ 󰋊  ",
+  "keyColor": "yellow",
+  "format": "{name} [{mount}] {used}/{total} ({percent}%) - {fs}",
+  "percent": {
+    "type": 2,
+    "green": 30,
+    "yellow": 70,
+    "red": 90
+  }
+},
+{
+  "type": "swap",
+  "key": "│ 󰓡  ",
+  "keyColor": "yellow",
+  "format": "{used}/{total} ({percent}%)",
+  "percent": {
+    "type": 2,
+    "green": 30,
+    "yellow": 70,
+    "red": 90
+  }
+},
     {
       "type": "custom",
       "format": "\u001b[33m╰────────────────────────"
