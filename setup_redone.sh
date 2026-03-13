@@ -5,7 +5,7 @@ cd ~
 sudo -v
 
 sudo sed -i '/#\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
-sudo pacman -Syu zsh steam cava base-devel git gnome-keyring hyprlock hypridle hyprpaper spotify-launcher swww swaync unzip nautilus vscode rofi fastfetch btop discord flatpak nwg-look otf-geist-mono-nerd impala --noconfirm
+sudo pacman -Syu zsh steam cava base-devel git gnome-keyring hyprlock hypridle hyprpaper spotify-launcher swww swaync unzip nautilus vscode rofi fastfetch btop discord flatpak nwg-look otf-geist-mono-nerd impala nwg-displays --noconfirm
 sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk  xdg-desktop-portal-hyprland --noconfirm
 
 git clone https://aur.archlinux.org/yay.git
@@ -55,7 +55,8 @@ sudo pacman -Suy --noconfirm\
   ttf-liberation \
   noto-fonts \
   noto-fonts-emoji \
-  ttf-opensans ttf-font-awesome
+  ttf-opensans ttf-font-awesome \
+  ttf-fira-code
 
 fc-cache -rv
 
