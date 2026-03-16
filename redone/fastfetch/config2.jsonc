@@ -1,0 +1,204 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "source": "$(find ~/Documents/hyprland_setup/redone/fastfetch/images -type f | shuf -n 1)",
+    "padding": {
+      "top": 2,
+      "left": 1,
+      "right": 1
+    }
+  },
+  "display": {
+    "separator": " "
+  },
+  "modules": [
+    "break",
+
+    // ================= SYSTEM =================
+    {
+      "type": "custom",
+      "format": "\u001b[31m╭─── SYSTEM"
+    },
+    {
+      "type": "title",
+      "key": "│  ",
+      "format": "{user-name}@{host-name}",
+      "keyColor": "red"
+    },
+    {
+      "type": "os",
+      "key": "│ OS",
+      "keyColor": "red"
+    },
+    {
+      "type": "command",
+      "key": "│ OS Age",
+      "keyColor": "red",
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); Days_difference=$((time_progression / 86400)); echo $Days_difference Days"
+    },
+    {
+      "type": "kernel",
+      "key": "│  ",
+      "keyColor": "red"
+    },
+    {
+      "type": "packages",
+      "format": "{} (packages installed)",
+      "key": "│ 󰏖 ",
+      "keyColor": "red"
+    },
+    {
+      "type": "shell",
+      "key": "│  ",
+      "keyColor": "red"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[31m╰────────────────────────"
+    },
+
+    // ================= SOFTWARE =================
+    {
+      "type": "custom",
+      "format": "\u001b[36m╭─── SOFTWARE"
+    },
+    {
+      "type": "wm",
+      "key": "│ WM",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "wmtheme",
+      "key": "│ 󰉼 ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "icons",
+      "key": "│ 󰀻 ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "cursor",
+      "key": "│  ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "terminal",
+      "key": "│  ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "terminalfont",
+      "key": "│  ",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[36m╰────────────────────────"
+    },
+
+    // ================= HARDWARE =================
+    {
+      "type": "custom",
+      "format": "\u001b[33m╭─── HARDWARE"
+    },
+    {
+      "type": "host",
+      "format": "{5} {1} Type {2}",
+      "key": "│ 󰌢 ",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "cpu",
+      "key": "│  ",
+      "keyColor": "yellow",
+      "showPeCoreCount": true,
+      "temp": true,
+      "format": "{name} C:{core-types} {freq-max}"
+    },
+  {
+    "type": "gpu",
+    "key": "│ 󰢮 ",
+    "keyColor": "yellow",
+    "detectionMethod": "auto",
+    "driverSpecific": true,
+    "format": "{name} C:{core-count}{?frequency} {frequency}{?}"
+  },
+  {
+    "type": "memory",
+    "key": "│   ",
+    "keyColor": "yellow",
+    "percent": {
+      "type": 2,
+      "green": 30,
+      "yellow": 70,
+      "red": 90
+    }
+  },
+  {
+    "type": "disk",
+    "key": "│ 󰋊  ",
+    "keyColor": "yellow",
+    "percent": {
+      "type": 3,
+      "green": 30,
+      "yellow": 70,
+      "red": 90
+    }
+  },
+  {
+    "type": "swap",
+    "key": "│ 󰓡  ",
+    "keyColor": "yellow",
+    "percent": {
+      "type": 3,
+      "green": 30,
+      "yellow": 70,
+      "red": 90
+    }
+  },
+  {
+    "type": "custom",
+    "format": "\u001b[33m╰────────────────────────"
+  },
+
+    // ================= INFORMATION =================
+    {
+      "type": "custom",
+      "format": "\u001b[32m╭─── INFORMATION"
+    },
+    {
+      "type": "media",
+      "key": "│ 󰝚 ",
+      "keyColor": "green"
+    },
+    {
+      "type": "player",
+      "key": "│ 󰥠 ",
+      "keyColor": "green"
+    },
+    
+    {
+      "type": "uptime",
+      "key": "│ 󰅐 ",
+      "keyColor": "green"
+    },
+    {
+      "type": "datetime",
+      "key": "│ 󰅐 ",
+      "keyColor": "green",
+      "format": "{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}:{second-pretty}  [{weekday}] [Week:{week}]"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[32m╰────────────────────────"
+    },
+
+    // ================= PACMAN COLORS =================
+    {
+      "type": "custom",
+      "format": "\u001b[33m󰮯 \u001b[30m󰊠 \u001b[91m󰊠 \u001b[31m󰊠 \u001b[92m󰊠 \u001b[32m󰊠 \u001b[93m󰊠 \u001b[33m󰊠 \u001b[94m󰊠 \u001b[34m󰊠 \u001b[95m󰊠 \u001b[35m󰊠 \u001b[96m󰊠 \u001b[36m󰊠 \u001b[97m󰊠 \u001b[37m󰊠"
+    }
+  ]
+}
