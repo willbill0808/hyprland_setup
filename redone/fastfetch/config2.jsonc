@@ -127,7 +127,7 @@
   },
   {
     "type": "memory",
-    "key": "│   ",
+    "key": "│  ",
     "keyColor": "yellow",
     "percent": {
       "type": 2,
@@ -138,7 +138,7 @@
   },
   {
     "type": "disk",
-    "key": "│ 󰋊  ",
+    "key": "│ 󰋊 ",
     "keyColor": "yellow",
     "percent": {
       "type": 3,
@@ -149,7 +149,7 @@
   },
   {
     "type": "swap",
-    "key": "│ 󰓡  ",
+    "key": "│ 󰓡 ",
     "keyColor": "yellow",
     "percent": {
       "type": 3,
@@ -189,6 +189,16 @@
       "key": "│ 󰅐 ",
       "keyColor": "green",
       "format": "{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}:{second-pretty}  [{weekday}] [Week:{week}]"
+    },
+    {
+      "type": "localip",
+      "key":  "│ 󰩟 ",
+      "keyColor": "green",
+      "showIpv4": true,
+      "compact": false,
+      "showPrefixLen": true,
+      "defaultRouteOnly": true,
+      "format": "{ipv4} ({ifname})"
     },
     {
       "type": "custom",
