@@ -201,6 +201,15 @@
       "format": "{ipv4} ({ifname})"
     },
     {
+      "type": "publicip",
+      "key":  "│ 󰩟 ",
+      "keyColor": "green",
+      "showIpv4": true,
+      "compact": false,
+      "showPrefixLen": true,
+      "defaultRouteOnly": true
+    },
+    {
       "type": "custom",
       "format": "\u001b[32m╰────────────────────────"
     },
