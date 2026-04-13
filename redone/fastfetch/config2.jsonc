@@ -108,6 +108,10 @@
       "format": "{5} {1} Type {2}",
       "key": "│ 󰌢 ",
       "keyColor": "yellow"
+    },{
+      "type": "display",
+      "key": "│ 🖵 ",
+      "keyColor": "yellow"
     },
     {
       "type": "cpu",
