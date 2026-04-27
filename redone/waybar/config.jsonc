@@ -38,13 +38,13 @@
         "on-click": "kitty -e impala & sleep 0.2 && hyprctl dispatch"
     },
     "network#ethernet": {
-        "interface": "enp7s0f1",
+        "interface": "eno1",
         "format-ethernet": " ETH: {ipaddr} ⬇ {bandwidthUpBits} ⬆ {bandwidthDownBits} ",
         "format-disconnected": "no Ethernet connection",
         "interval": 1
     },
     "network#speed": {
-        "interface": "enp7s0f1",
+        "interface": "eno1",
         "format-wifi": "⬇ {bandwidthDown} ⬆ {bandwidthUp}",
         "interval": 1
     },

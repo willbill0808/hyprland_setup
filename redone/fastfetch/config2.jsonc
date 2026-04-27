@@ -14,7 +14,6 @@
   },
   "modules": [
     "break",
-
     // ================= SYSTEM =================
     {
       "type": "custom",
@@ -57,7 +56,6 @@
       "type": "custom",
       "format": "\u001b[31m╰────────────────────────"
     },
-
     // ================= SOFTWARE =================
     {
       "type": "custom",
@@ -97,7 +95,6 @@
       "type": "custom",
       "format": "\u001b[36m╰────────────────────────"
     },
-
     // ================= HARDWARE =================
     {
       "type": "custom",
@@ -108,9 +105,16 @@
       "format": "{5} {1} Type {2}",
       "key": "│ 󰌢 ",
       "keyColor": "yellow"
-    },{
+    },
+    {
+      "type": "motherboard",
+      "key": "│ 󰔷 ",
+      "keyColor": "green",
+      "format": "{vendor} {name}"
+    },
+    {
       "type": "display",
-      "key": "│ 🖵 ",
+      "key": "│ 󰍹 ",
       "keyColor": "yellow"
     },
     {
@@ -121,52 +125,51 @@
       "temp": true,
       "format": "{name} C:{core-types} {freq-max}"
     },
-  {
-    "type": "gpu",
-    "key": "│ 󰢮 ",
-    "keyColor": "yellow",
-    "detectionMethod": "auto",
-    "driverSpecific": true,
-    "format": "{name} C:{core-count}{?frequency} {frequency}{?}"
-  },
-  {
-    "type": "memory",
-    "key": "│  ",
-    "keyColor": "yellow",
-    "percent": {
-      "type": 2,
-      "green": 30,
-      "yellow": 70,
-      "red": 90
-    }
-  },
-  {
-    "type": "disk",
-    "key": "│ 󰋊 ",
-    "keyColor": "yellow",
-    "percent": {
-      "type": 3,
-      "green": 30,
-      "yellow": 70,
-      "red": 90
-    }
-  },
-  {
-    "type": "swap",
-    "key": "│ 󰓡 ",
-    "keyColor": "yellow",
-    "percent": {
-      "type": 3,
-      "green": 30,
-      "yellow": 70,
-      "red": 90
-    }
-  },
-  {
-    "type": "custom",
-    "format": "\u001b[33m╰────────────────────────"
-  },
-
+    {
+      "type": "gpu",
+      "key": "│ 󰢮 ",
+      "keyColor": "yellow",
+      "detectionMethod": "auto",
+      "driverSpecific": true,
+      "format": "{name} C:{core-count}{?frequency} {frequency}{?}"
+    },
+    {
+      "type": "memory",
+      "key": "│  ",
+      "keyColor": "yellow",
+      "percent": {
+        "type": 2,
+        "green": 30,
+        "yellow": 70,
+        "red": 90
+      }
+    },
+    {
+      "type": "disk",
+      "key": "│ 󰋊 ",
+      "keyColor": "yellow",
+      "percent": {
+        "type": 3,
+        "green": 30,
+        "yellow": 70,
+        "red": 90
+      }
+    },
+    {
+      "type": "swap",
+      "key": "│ 󰓡 ",
+      "keyColor": "yellow",
+      "percent": {
+        "type": 3,
+        "green": 30,
+        "yellow": 70,
+        "red": 90
+      }
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[33m╰────────────────────────"
+    },
     // ================= INFORMATION =================
     {
       "type": "custom",
@@ -182,7 +185,6 @@
       "key": "│ 󰥠 ",
       "keyColor": "green"
     },
-    
     {
       "type": "uptime",
       "key": "│ 󰅐 ",
@@ -196,7 +198,7 @@
     },
     {
       "type": "localip",
-      "key":  "│ 󰩟 ",
+      "key": "│ 󰩟 ",
       "keyColor": "green",
       "showIpv4": true,
       "compact": false,
@@ -206,7 +208,7 @@
     },
     {
       "type": "publicip",
-      "key":  "│ 󰩟 ",
+      "key": "│ 󰩟 ",
       "keyColor": "green",
       "showIpv4": true,
       "compact": false,
@@ -217,7 +219,6 @@
       "type": "custom",
       "format": "\u001b[32m╰────────────────────────"
     },
-
     // ================= PACMAN COLORS =================
     {
       "type": "custom",
